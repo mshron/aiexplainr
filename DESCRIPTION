@@ -1,0 +1,11 @@
+Package: aiexplainr
+Title: Explain Model Outputs with LLMs
+Version: 0.0.0.9000
+Authors@R: 
+    person("Max", "Shron", , "max@shron.net", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Inspired by the `explainr` package developed by Hilary Parker et al., `aiexplainr` automatically generates readable summaries of model outputs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.0
