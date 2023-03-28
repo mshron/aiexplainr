@@ -48,7 +48,7 @@ aiexplain <- function(x, var_desc = "", datagen = "", send_history = TRUE, ...) 
     messages <- list(list("role" = "system",
                           "content" = system_prompt),
                     list("role" = "user",
-                          "content" = "What conclusions can we draw from the following R output? Do NOT list a summary of key results, instead provide ONLY a simple explanation of the underlying data and an interpretation of the results. If the information I give you is inconsistent, instead explain the inconsistency and STOP."),
+                          "content" = "What conclusions can we draw from the following R output? Do NOT list a summary of key results, instead provide ONLY a simple explanation of the underlying data and an interpretation of the results. Whenever possible, use percentages instead of raw numbers (e.g. 80% instead of 0.8). If the information I give you is inconsistent, instead explain the inconsistency and STOP."),
                      list("role" = "user",
                           "content" = paste(capture.output(x), collapse="\n")),
                      list("role" = "user",
