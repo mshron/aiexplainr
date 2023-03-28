@@ -6,7 +6,8 @@ load_system_prompt <- function() {
     paste(system_prompt, collapse="\n")
 }
 
-#' capture history, output to a string
+#' capture history, output to a string; ignores previous aiexplainr calls
+#' '
 #' Note this only works on Unix-like systems
 #'
 string_history <- function() {
@@ -14,7 +15,8 @@ string_history <- function() {
     savehistory(file1)
     rawhist <- readLines(file1)
     unlink(file1)
-    paste(rawhist, collapse="\n")
+    filterhist <- unique(grep("aiexplain", rawhist, value=TRUE, invert=TRUE))
+    paste(filterhist, collapse="\n")
 }
 
 #' Explain an S3 object in plain English, using an LLM
