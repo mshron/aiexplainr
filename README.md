@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Use large language models (LLMs) like GPT-4 to explain model results in R. It has been tested to handle `lm`, `glm`, and `prop.test`, but will likely work with a wider variety of frequentist and Bayesian models as well. It does best when you handle additional information about the variables and/or data generating process, especially for multiple regressions and possible causal inferences. For now you will need an OpenAI API key.
+Use large language models (LLMs) like GPT-4 to explain model results in R. It has been tested to handle `lm`, `glm`, and `prop.test`, but will likely work with a wider variety of frequentist and Bayesian models as well. It does best when you handle additional information about the variables and/or data generating process, especially for multiple regressions and possible causal inferences. For now you will need an OpenAI API key with access to GPT-4.
 
 Note that, by default, `aiexplainr` sends your command history up with the summary of the model, so please don't send anything sensitive if you don't trust OpenAI.
 
