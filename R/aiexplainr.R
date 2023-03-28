@@ -27,7 +27,7 @@ string_history <- function() {
 #'
 #' @import openai
 #'
-aiexplain <- function(x, var_desc, datagen, send_history = TRUE, ...) {
+aiexplain <- function(x, var_desc = "", datagen = "", send_history = TRUE, ...) {
 
     #TODO add check for OpenAI key being set 
 
@@ -41,18 +41,22 @@ aiexplain <- function(x, var_desc, datagen, send_history = TRUE, ...) {
 
     var_desc <- paste(var_desc, collapse="\n")
 
+    if (datagen != "") {
+        datagen <- paste(c("Here is an explanation of how this data was collected.", datagen), collapse = " ")
+    }
+
     messages <- list(list("role" = "system",
                           "content" = system_prompt),
-                     list("role" = "user", 
-                          "content" = datagen),
-                     list("role" = "user", 
-                          "content" = var_desc),
-                     list("role" = "user",
-                          "content" = "What conclusions can we draw from the following R output? Do NOT list a summary of key results, instead provide ONLY a simple explanation of the underlying data and an interpretation of the results."),
+                    list("role" = "user",
+                          "content" = "What conclusions can we draw from the following R output? Do NOT list a summary of key results, instead provide ONLY a simple explanation of the underlying data and an interpretation of the results. If the information I give you is inconsistent, instead explain the inconsistency and STOP."),
                      list("role" = "user",
                           "content" = paste(capture.output(x), collapse="\n")),
                      list("role" = "user",
                           "content" = paste(capture.output(summary(x)), collapse="\n")),
+                     list("role" = "user", 
+                          "content" = datagen),
+                     list("role" = "user", 
+                          "content" = var_desc),
                      list("role" = "user",
                           "content" = command_history))
 
