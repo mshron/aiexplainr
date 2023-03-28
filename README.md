@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Use large language models (LLMs) like GPT-4 to explain model results in R. It has been tested to handle `lm`, `glm`, and `prop.test`, but will likely work with a wider variety of frequentist and Bayesian models as well. For now you will need an OpenAI API key.
+Use large language models (LLMs) like GPT-4 to explain model results in R. It has been tested to handle `lm`, `glm`, and `prop.test`, but will likely work with a wider variety of frequentist and Bayesian models as well. It does best when you handle additional information about the variables and/or data generating process, especially for multiple regressions and possible causal inferences. For now you will need an OpenAI API key.
 
 Note that, by default, `aiexplainr` sends your command history up with the summary of the model, so please don't send anything sensitive if you don't trust OpenAI.
 
@@ -74,5 +74,3 @@ aiexplain(m1,
           datagen = "Data were collected as part of a randomized experiment; group 1 were toddlers who were allowed to nap (the control group) and group 2 were prevented from napping (the treatment group)")
 ```
 > The information provided is inconsistent. The R output is related to a linear regression model analyzing the relationship between car speed and stopping distance, while the description of the data collection is about an experiment with toddlers and puzzle completion. Please provide consistent information to proceed with the analysis.
-```
-
