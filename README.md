@@ -47,10 +47,12 @@ Output:
 
 > The R output is from a 2-sample test for equality of proportions with continuity correction. The data consists of two groups, with 450 out of 500 in the first group and 400 out of 500 in the second group. The test is comparing the proportions between these two groups.
 > 
-> The results show that there is a statistically significant difference between the proportions of the two groups, with a p-value of 1.428e-05, which is much smaller than the typical significance level of 0.05. The 95% confidence interval for the difference in proportions ranges from 0.05417387 to 0.14582613. The sample estimates indicate that the proportion in the first group is 0.9, while the proportion in the second group is 0.8.\n\nIn conclusion, the test suggests that there is a significant difference between the proportions of the two groups.
+> The results show that there is a statistically significant difference between the proportions of the two groups, with a p-value of 1.428e-05, which is much smaller than the typical significance level of 0.05. The 95% confidence interval for the difference in proportions ranges from 0.05417387 to 0.14582613. The sample estimates indicate that the proportion in the first group is 0.9, while the proportion in the second group is 0.8.
+>
+> In conclusion, the test suggests that there is a significant difference between the proportions of the two groups.
 
 
-In general you will get better results if you explain the variables and/or data generating process, since the LLM will use units and/or reasonable understanding of the phenomena to flesh out the description
+In general you will get better results if you explain the variables and/or data generating process, since the LLM will use units and/or reasonable understanding of the phenomena to flesh out the description.
 
 ```r
 aiexplain(m2, 
