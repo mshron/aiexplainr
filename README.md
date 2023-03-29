@@ -20,9 +20,9 @@ install.github("mshron/aiexplainr")
 
 ## How does this work?
 
-The `aiexplain` command packages up R model objects, summaries, optional side information (such as variable descriptions and units, experiment design, and R command history) and sends it along with the background commands to GPT-4 and displays the output.
+The `aiexplain` command packages up R model objects, summaries, optional side information (such as variable descriptions and units, experiment design, and R command history), combines it with explicit instructions on how to explain results, and sends it to a LLM (in this case, GPT-4) for summarization.
 
-This works because we also send a GPT-4 prompt primed with heuristics for explaining statistical models in an intuitive way. Over time, we can continue to add instructions for correctly interpreting models; GPT-4 can accept up to about 60 pages of context for every API call. PRs to improve the explanation of other statistical techniques welcome!
+This works well because we send a system prompt primed with heuristics for explaining statistical models in an intuitive way. Over time, we can continue to add instructions for correctly interpreting models; GPT-4 can accept up to about 60 pages of context for every API call. PRs to improve the explanation of other statistical techniques welcome!
 
 ## Examples
 
