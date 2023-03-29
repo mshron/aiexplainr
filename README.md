@@ -18,8 +18,13 @@ You can install the development version of aiexplainr like so:
 install.github("mshron/aiexplainr")
 ```
 
-## Example
+## How does this work?
 
+The `aiexplain` command packages up R model objects, summaries, optional side information (such as variable descriptions and units, experiment design, and R command history) and sends it along with the background commands to GPT-4 and displays the output.
+
+This works because we also send a GPT-4 prompt primed with heuristics for explaining statistical models in an intuitive way. Over time, we can continue to add instructions for correctly interpreting models; GPT-4 can accept up to about 60 pages of context for every API call. PRs to improve the explanation of other statistical techniques welcome!
+
+## Examples
 
 ``` r
 library(aiexplainr)
@@ -52,7 +57,13 @@ Output:
 > In conclusion, the test suggests that there is a significant difference between the proportions of the two groups.
 
 
+## Side information
+
 In general you will get better results if you explain the variables and/or data generating process, since the LLM will use units and/or reasonable understanding of the phenomena to flesh out the description.
+
+There are two bits of side information to control: variable descriptions (`var_desc`) and the data generating process (`datagen`). `var_desc` accepts a string, or a list of variable names mapped to explanations about them.
+
+For example,
 
 ```r
 aiexplain(m2, 
