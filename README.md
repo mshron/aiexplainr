@@ -15,7 +15,8 @@ Interface inspired by [explainr](https://github.com/hilaryparker/explainr).
 You can install the development version of aiexplainr like so:
 
 ``` r
-install.github("mshron/aiexplainr")
+library("devtools")
+install_github("mshron/aiexplainr")
 ```
 
 ## How does this work?
